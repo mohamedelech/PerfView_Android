@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="0.18">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:text="Detail Bench Press performance"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/editBench"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textColorLink="@android:color/holo_green_dark" />
+
+            <TextView
+                android:text="Date :"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:id="@+id/textViewDate"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:inputType="date"
+                android:ems="10"
+                android:id="@+id/editDatePerf"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textColorLink="@color/colorPrimary" />
+
+            <TextView
+                android:text="Weight Kg :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewWeight"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_weight="0.18" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:inputType="number|numberDecimal"
+                android:ems="10"
+                android:id="@+id/editWeight" />
+
+            <TextView
+                android:text="Repetitions :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_weight="0.18" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/editReps"
+                android:inputType="number"
+                android:layout_weight="0.18" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:layout_weight="0.18" />
+
+            <TextView
+                android:text="Photo :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/photo"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:layout_weight="0.18" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                app:srcCompat="@android:drawable/ic_menu_report_image"
+                android:id="@+id/imageView3"
+                android:layout_weight="5.29" />
+
+            <TextView
+                android:text="Address :"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewAddress"
+                android:layout_weight="0.18"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:inputType="textMultiLine"
+                android:ems="10"
+                android:id="@+id/editTextAddress"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_weight="44.88" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_weight="5.67">
+
+                <Button
+                    android:text="Supprimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/update_btn"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/delete_btn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:background="@android:color/holo_red_light" />
+
+                <Button
+                    android:text="Modifier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/update_btn"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:background="@android:color/holo_blue_light"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

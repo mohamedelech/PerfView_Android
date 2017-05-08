@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:weightSum="1">
+
+    <TextView
+        android:text="Enter your Bench Press performance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/editBench"
+        android:layout_weight="0.18"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColorLink="@android:color/holo_green_dark" />
+
+    <TextView
+        android:text="Date :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewDate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <EditText
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editDatePerf"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:textColorLink="@color/colorPrimary"
+        android:layout_weight="0.09" />
+
+    <TextView
+        android:text="Weight Kg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewWeight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="number|numberDecimal"
+        android:ems="10"
+        android:id="@+id/editWeight" />
+
+    <TextView
+        android:text="Repetitions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView6"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:id="@+id/editReps"
+        android:inputType="number" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_weight="0.04" />
+
+    <TextView
+        android:text="Photo :"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/photo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <Button
+        android:text="Importer"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:id="@+id/importPhoto" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:inputType="textMultiLine"
+        android:visibility="invisible"
+        android:ems="10"
+        android:id="@+id/test" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:text="Address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewAddress"
+        android:layout_weight="0.18"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editTextAddress" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <Button
+        android:text="Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@android:color/holo_green_dark" />
+
+</LinearLayout>

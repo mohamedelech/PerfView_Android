@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera" />
+        <item
+            android:id="@+id/nav_agenda"
+            android:icon="@android:drawable/ic_menu_today"
+            android:title="Agenda" />
+        <item
+            android:id="@+id/nav_SaisiePerf"
+            android:icon="?android:attr/actionModePasteDrawable"
+            android:title="Saisie Performance" />
+    </group>
+
+    <item android:title="Fonctions avancées">
+        <menu>
+            <item
+                android:id="@+id/nav_compass"
+                android:icon="@android:drawable/ic_menu_compass"
+                android:title="Boussole" />
+            <item
+                android:id="@+id/nav_Ra"
+                android:icon="@android:drawable/btn_star"
+                android:title="Réalité augmentée" />
+            <item android:title="Reconnaitre mouvement"
+                android:icon="@android:drawable/ic_menu_search"
+                android:id="@+id/nav_Rm" />
+        </menu>
+    </item>
+
+</menu>
