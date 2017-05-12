@@ -1,7 +1,11 @@
 package com.example.mohamedelech.perfview;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,11 +18,18 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.github.sundeepk.compactcalendarview.domain.Event;
+
+import java.util.Calendar;
+import java.util.List;
+
 
 public class MainActivity extends AppCompatActivity
+
         implements NavigationView.OnNavigationItemSelectedListener {
 
     protected Button button;
+    private SQLiteDatabaseHandlerAgenda db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        db = new SQLiteDatabaseHandlerAgenda(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -44,6 +56,26 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        List<Agenda> agendas = db.allagendasAfter();
+
+        if (agendas != null) {
+
+            Long date = agendas.get(0).getDate();
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(date);
+            calendar.set(Calendar.HOUR_OF_DAY,8);
+            calendar.set(Calendar.MINUTE,00);
+
+            Intent intent = new Intent(getApplicationContext(),Notification_reciver.class);
+
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(getApplicationContext(),100,intent,PendingIntent.FLAG_UPDATE_CURRENT);
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),pendingIntent);
+        }
+
     }
 
     @Override
@@ -91,6 +123,9 @@ public class MainActivity extends AppCompatActivity
             return true;
 
         } else if (id == R.id.nav_agenda) {
+            Intent intent = new Intent(MainActivity.this, calendarActivity.class);
+            startActivity(intent);
+            return true;
 
         } else if (id == R.id.nav_SaisiePerf) {
             Intent intent = new Intent(MainActivity.this, AddPerfActivity.class);

@@ -11,6 +11,9 @@
     <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
     <uses-feature android:name="android.hardware.camera"
         android:required="false" />
 
@@ -36,8 +39,13 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:name=".calendarActivity"
+            android:label="Agenda"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".CameraActivity"
-            android:label="Saisie Perf"
+            android:label="camera"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
@@ -50,6 +58,8 @@
             android:label="Bench Press Detail"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
+        <receiver android:name=".Notification_reciver"/>
 
         <!-- This meta-data tag is required to use Google Play Services. -->
         <meta-data

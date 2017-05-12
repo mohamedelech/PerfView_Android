@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "637174573275",
+    "firebase_url": "https://perfview-f04c2.firebaseio.com",
+    "project_id": "perfview-f04c2",
+    "storage_bucket": "perfview-f04c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637174573275:android:4338ef1d58dcda64",
+        "android_client_info": {
+          "package_name": "com.example.mohamedelech.perfview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "637174573275-ujum3m6ur92q0iohimf3ick7vio82e34.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRF2sz8KQ4ntTBCe5dX1XV3UH9CyccVUw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
