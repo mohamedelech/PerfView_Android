@@ -28,7 +28,7 @@
         app:compactCalendarMultiEventIndicatorColor="#f25ee854" />
 
     <TextView
-        android:text="Your next 5 days of training"
+        android:text="Your next 3 days of training"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView3"

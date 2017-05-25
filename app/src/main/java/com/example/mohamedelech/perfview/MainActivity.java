@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity
 
         List<Agenda> agendas = db.allagendasAfter();
 
-        if (agendas != null) {
+        if (agendas.size()>0) {
 
             Long date = agendas.get(0).getDate();
 
@@ -133,6 +133,10 @@ public class MainActivity extends AppCompatActivity
             return true;
 
         } else if (id == R.id.nav_compass) {
+            Intent intent = new Intent(MainActivity.this, CompassActivity.class);
+            startActivity(intent);
+            return true;
+
 
         } else if (id == R.id.nav_Ra) {
 

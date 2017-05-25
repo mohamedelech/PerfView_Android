@@ -39,6 +39,11 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
+            android:name=".CompassActivity"
+            android:label="Saisie Perf"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
             android:name=".calendarActivity"
             android:label="Agenda"
             android:theme="@style/AppTheme.NoActionBar">

@@ -56,7 +56,7 @@ public class calendarActivity extends AppCompatActivity {
             String dateString = sdf.format(date);
             toolbar.setTitle(dateString);
 
-            initListView();
+            //initListView();
 
             compactCalendar = (CompactCalendarView) findViewById(R.id.compactcalendar_view);
             compactCalendar.setUseThreeLetterAbbreviation(true);
@@ -83,7 +83,7 @@ public class calendarActivity extends AppCompatActivity {
                         long date = dateClicked.getTime()+86400000;
                         android.icu.text.SimpleDateFormat sdf = new android.icu.text.SimpleDateFormat("dd MM yyyy");
                         String dateString = sdf.format(date);
-                        initListView();
+                        //initListView();
                         Toast.makeText(context, "Traning Planned for "+dateString, Toast.LENGTH_SHORT).show();
                     } else {
                         List<Event> events = compactCalendar.getEvents(dateClicked);
@@ -93,7 +93,7 @@ public class calendarActivity extends AppCompatActivity {
                         long date = dateClicked.getTime()+86400000;
                         android.icu.text.SimpleDateFormat sdf = new android.icu.text.SimpleDateFormat("dd MM yyyy");
                         String dateString = sdf.format(date);
-                        initListView();
+                        //initListView();
                         Toast.makeText(context, "Traning Deleted for "+dateString, Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -110,10 +110,10 @@ public class calendarActivity extends AppCompatActivity {
         // list all events after todays
         List<Agenda> agendas = db.allagendasAfter();
 
-        if (agendas != null) {
+        if ((agendas.size()> 0) && (agendas.size()<= 3)) {
             String[] itemsNames = new String[3];
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < agendas.size(); i++) {
                 itemsNames[i] = agendas.get(i).toString();
             }
 
