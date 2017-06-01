@@ -35,7 +35,17 @@
         </activity>
         <activity
             android:name=".AddPerfActivity"
-            android:label="Saisie Perf"
+            android:label="Add Perf"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ReconnaissanceMouvementActivity"
+            android:label="Reconnaissance mouvement"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".RmActivity"
+            android:label="Reconnaissance mouvement"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
