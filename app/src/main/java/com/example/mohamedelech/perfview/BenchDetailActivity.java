@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -39,6 +40,8 @@ public class BenchDetailActivity extends AppCompatActivity {
     EditText txt_reps;
     EditText txt_address;
     ImageView imgView;
+    Uri data;
+    Uri imageUri;
     Performance perf = new Performance();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -67,7 +70,7 @@ public class BenchDetailActivity extends AppCompatActivity {
         if(perf.getPhoto() != null){
             if (checkStoragePermission()) {
                 //afficher image
-                Uri imageUri = Uri.parse(perf.getPhoto());
+                imageUri = Uri.parse(perf.getPhoto());
 
                 try {
                     inputStream = getContentResolver().openInputStream(imageUri);
@@ -87,7 +90,7 @@ public class BenchDetailActivity extends AppCompatActivity {
                 Intent photoPickerIntent = new Intent(Intent.ACTION_PICK);
                 File picture = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
                 String picturePath = picture.getPath();
-                Uri data = Uri.parse(picturePath);
+                data = Uri.parse(picturePath);
 
                 photoPickerIntent.setDataAndType(data,"image/*");
 
@@ -131,6 +134,24 @@ public class BenchDetailActivity extends AppCompatActivity {
                     Log.v("DetailActivity", "Perf deleted");
                 }
                 startActivity(intent);
+            }
+        });
+
+        //Partager
+        FloatingActionButton btn_share = (FloatingActionButton) findViewById(R.id.fabShare);
+        btn_share.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String text = "Bench Press" +"\n"+
+                        "Weight : " + txt_weight.getText().toString() +"\n"+
+                        "Reps : " +txt_reps.getText().toString();
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_TEXT, text);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
+                shareIntent.setType("image/*");
+                shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                startActivity(Intent.createChooser(shareIntent, "Share images..."));
             }
         });
     }

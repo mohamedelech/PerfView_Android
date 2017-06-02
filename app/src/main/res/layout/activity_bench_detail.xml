@@ -18,6 +18,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fabShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|right"
+                app:srcCompat="@android:drawable/ic_menu_share"
+                app:backgroundTint="@color/colorPrimaryDark"
+                app:layout_anchor="@+id/frameLayout"
+                app:layout_anchorGravity="top|right" />
+
             <TextView
                 android:text="Detail Bench Press performance"
                 android:layout_width="match_parent"
@@ -90,10 +100,9 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="85dp"
+                android:layout_height="150dp"
                 app:srcCompat="@android:drawable/ic_menu_report_image"
-                android:id="@+id/imageView3"
-                android:layout_weight="5.29" />
+                android:id="@+id/imageView3"/>
 
             <TextView
                 android:text="Address :"

@@ -5,6 +5,8 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.icu.text.DateFormat;
 import android.icu.text.SimpleDateFormat;
@@ -30,13 +32,16 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.DatePicker;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
@@ -58,6 +63,8 @@ public class AddPerfActivity extends AppCompatActivity implements LocationListen
     EditText txt_address;
     EditText txt_test;
     Button btn_import;
+    ImageView imgView;
+    InputStream inputStream;
     LocationManager lManager;
     Location location;
     String provider;
@@ -73,6 +80,7 @@ public class AddPerfActivity extends AppCompatActivity implements LocationListen
         setContentView(R.layout.activity_add_perf);
 
         db = new SQLiteDatabaseHandler(this);
+        imgView = (ImageView) findViewById(R.id.imageView3);
 
         if (checkLocationPermission()){
                 lManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
@@ -149,6 +157,15 @@ public class AddPerfActivity extends AppCompatActivity implements LocationListen
         if (resultCode == RESULT_OK){
                 btn_import.setBackgroundColor(Color.GREEN);
                 txt_test.setText(data.getDataString());
+
+                Uri imageUri = data.getData();
+            try {
+                inputStream = getContentResolver().openInputStream(imageUri);
+                Bitmap image = BitmapFactory.decodeStream(inputStream);
+                imgView.setImageBitmap(image);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
                 Toast.makeText(this, "Photo imported", Toast.LENGTH_LONG).show();
             }
     }
