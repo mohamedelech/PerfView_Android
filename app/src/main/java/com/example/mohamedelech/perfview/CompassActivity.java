@@ -1,11 +1,15 @@
 package com.example.mohamedelech.perfview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
+import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
@@ -41,6 +45,17 @@ public class CompassActivity extends Activity implements SensorEventListener {
 
         // initialize your android device sensor capabilities
         mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+
+        //Pour revenir à l'accueil
+        FloatingActionButton btn_back = (FloatingActionButton) findViewById(R.id.fab);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("CompassActivity", "On button back clicked");
+                Intent intent = new Intent(CompassActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -1,23 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.mohamedelech.perfview.ItemListActivity">
 
-    <android.support.v7.widget.Toolbar
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
-        android:theme="?attr/actionBarTheme"
-        android:minHeight="?attr/actionBarSize"
-        android:id="@+id/toolbar2" />
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimaryDark">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:theme="?attr/actionBarTheme"
+                android:minHeight="?attr/actionBarSize"
+                android:layout_marginLeft="50dp"
+                android:id="@+id/toolbar2" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="?android:attr/actionModeCloseDrawable"
+                app:backgroundTint="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                app:fabSize="mini" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <com.github.sundeepk.compactcalendarview.CompactCalendarView
         android:id="@+id/compactcalendar_view"
         android:layout_width="fill_parent"
         android:paddingRight="10dp"
         android:paddingLeft="10dp"
+        android:layout_marginTop="70dp"
         android:layout_height="250dp"
         app:compactCalendarTargetHeight="250dp"
         app:compactCalendarTextSize="12sp"
@@ -31,15 +60,16 @@
         android:text="Your next 3 days of training"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
         android:id="@+id/textView3"
         android:textSize="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:textAlignment="center"/>
 
     <ListView
+        android:layout_marginTop="320dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/list_agenda" />
 
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

@@ -14,13 +14,31 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         android:background="@color/colorPrimaryDark">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:title="Bench Press"
-            app:title="Bench Press"
-            app:popupTheme="@color/colorPrimaryDark" />
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:title="Bench Press"
+                android:layout_marginLeft="50dp"
+                app:title="Bench Press"
+                app:popupTheme="@color/colorPrimaryDark" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="?android:attr/actionModeCloseDrawable"
+                app:backgroundTint="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                app:elevation="24dp"
+                app:fabSize="mini" />
+        </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
 
@@ -41,26 +59,15 @@
     </FrameLayout>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginBottom="30dp"
-        android:layout_marginRight="20dp"
-        app:srcCompat="?android:attr/actionModeCloseDrawable"
-        app:backgroundTint="@color/colorPrimaryDark" />
-
-    <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
         android:layout_marginTop="100dp"
         android:layout_marginRight="20dp"
         app:srcCompat="@android:drawable/ic_menu_add"
         app:backgroundTint="@color/colorPrimaryDark"
         app:layout_anchor="@+id/frameLayout"
-        app:layout_anchorGravity="top|right" />
-
+        app:layout_anchorGravity="top|right"
+        android:layout_gravity="bottom|left" />
 
 </android.support.design.widget.CoordinatorLayout>

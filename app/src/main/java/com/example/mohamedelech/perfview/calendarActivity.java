@@ -11,11 +11,14 @@ import android.graphics.Color;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.app.NotificationCompat;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -101,6 +104,17 @@ public class calendarActivity extends AppCompatActivity {
                 @Override
                 public void onMonthScroll(Date firstDayOfNewMonth) {
                     toolbar.setTitle(dateFormatMonth.format(firstDayOfNewMonth));
+                }
+            });
+
+            //Pour revenir à l'Accueil
+            FloatingActionButton btn_back = (FloatingActionButton) findViewById(R.id.fab);
+            btn_back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Log.v("calendarActivity", "On button back clicked");
+                    Intent intent = new Intent(calendarActivity.this, MainActivity.class);
+                    startActivity(intent);
                 }
             });
 

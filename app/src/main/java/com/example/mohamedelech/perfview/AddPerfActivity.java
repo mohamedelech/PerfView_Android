@@ -25,9 +25,11 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -91,6 +93,16 @@ public class AddPerfActivity extends AppCompatActivity implements LocationListen
                 afficherAdresse();
             }
 
+        //Pour revenir à la liste
+        FloatingActionButton btn_back = (FloatingActionButton) findViewById(R.id.fab);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("AddPerfActivity", "On button back clicked");
+                Intent intent = new Intent(AddPerfActivity.this, BenchListActivity.class);
+                startActivity(intent);
+            }
+        });
 
         //Set date
         long date = System.currentTimeMillis();

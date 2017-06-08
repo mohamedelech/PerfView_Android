@@ -82,6 +82,18 @@ public class BenchDetailActivity extends AppCompatActivity {
                 }
             }
         }
+
+        //Pour revenir à la list
+        FloatingActionButton btn_back = (FloatingActionButton) findViewById(R.id.fab);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("BenchDetailActivity", "On button back clicked");
+                Intent intent = new Intent(BenchDetailActivity.this, BenchListActivity.class);
+                startActivity(intent);
+            }
+        });
+
         //import photo
             imgView .setOnClickListener(new View.OnClickListener() {
             @Override
@@ -151,7 +163,7 @@ public class BenchDetailActivity extends AppCompatActivity {
                 shareIntent.putExtra(Intent.EXTRA_STREAM, imageUri);
                 shareIntent.setType("image/*");
                 shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                startActivity(Intent.createChooser(shareIntent, "Share images..."));
+                startActivity(Intent.createChooser(shareIntent, "Share your perf"));
             }
         });
     }

@@ -1,51 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="1">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.mohamedelech.perfview.ItemListActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorPrimaryDark">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:title="Detail Bench Press"
+                android:layout_marginLeft="50dp"
+                app:title="Detail Bench Press"
+                app:popupTheme="@color/colorPrimaryDark" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="?android:attr/actionModeCloseDrawable"
+                app:backgroundTint="@color/colorAccent"
+                app:fabSize="mini"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <ScrollView
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
+        android:layout_marginTop="70dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.18">
+        android:layout_weight="0.18"
+        android:id="@+id/scrollView2">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <android.support.design.widget.FloatingActionButton
-                android:id="@+id/fabShare"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|right"
-                app:srcCompat="@android:drawable/ic_menu_share"
-                app:backgroundTint="@color/colorPrimaryDark"
-                app:layout_anchor="@+id/frameLayout"
-                app:layout_anchorGravity="top|right" />
-
-            <TextView
-                android:text="Detail Bench Press performance"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:textAlignment="center"
-                android:textSize="20dp"
-                android:layout_marginTop="20dp"
-                android:id="@+id/editBench"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColorLink="@android:color/holo_green_dark" />
+                android:layout_height="wrap_content">
 
             <TextView
                 android:text="Date :"
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textViewDate"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
+            </RelativeLayout>
             <EditText
                 android:inputType="date"
                 android:ems="10"
@@ -150,4 +172,19 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_gravity="bottom|left"
+        app:srcCompat="@android:drawable/ic_menu_share"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:layout_anchor="@+id/scrollView2"
+        app:layout_anchorGravity="top|right"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="12dp" />
+
+</android.support.design.widget.CoordinatorLayout>
+

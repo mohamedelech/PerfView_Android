@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:fitsSystemWindows="true"
+    tools:context="com.example.mohamedelech.perfview.ItemListActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
@@ -12,15 +14,38 @@
         android:theme="@style/AppTheme.AppBarOverlay"
         android:background="@color/colorPrimaryDark">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:title="Reconnaissance Mouvement"
-            app:title="Reconnaissance Mouvement"
-            app:popupTheme="@color/colorPrimaryDark" />
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:title="Accelerometer "
+                android:layout_marginLeft="50dp"
+                app:title="Accelerometer "
+                app:popupTheme="@color/colorPrimaryDark" />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="?android:attr/actionModeCloseDrawable"
+                app:backgroundTint="@color/colorAccent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                app:fabSize="mini" />
+        </RelativeLayout>
 
     </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:orientation="vertical" >
 
     <TextView
         android:text="Axe X"
@@ -61,4 +86,19 @@
         android:layout_height="wrap_content"
         android:id="@+id/textZ" />
 
-</LinearLayout>
+    <TextView
+        android:text="Direction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        tools:text="Direction" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textDirection" />
+
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>

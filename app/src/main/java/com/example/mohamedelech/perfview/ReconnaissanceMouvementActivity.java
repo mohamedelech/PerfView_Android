@@ -5,11 +5,15 @@ package com.example.mohamedelech.perfview;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 public class ReconnaissanceMouvementActivity  extends Activity {
@@ -31,6 +35,17 @@ public class ReconnaissanceMouvementActivity  extends Activity {
         mTxtViewX = (TextView) findViewById(R.id.textX);
         mTxtViewY = (TextView) findViewById(R.id.textY);
         mTxtViewZ = (TextView) findViewById(R.id.textZ);
+
+        //Pour revenir à l'Accueil
+        FloatingActionButton btn_back = (FloatingActionButton) findViewById(R.id.fab);
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.v("RmActivity", "On button back clicked");
+                Intent intent = new Intent(ReconnaissanceMouvementActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
