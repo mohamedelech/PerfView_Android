@@ -41,7 +41,7 @@ public class CameraActivity extends AppCompatActivity {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Intent intent = new Intent(CameraActivity.this, MainActivity.class);
             startActivity(intent);
-            Toast.makeText(this, "The photo/video has been saved", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "The photo has been saved", Toast.LENGTH_LONG).show();
         }
     }
 

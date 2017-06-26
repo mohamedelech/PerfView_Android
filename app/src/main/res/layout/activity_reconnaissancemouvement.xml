@@ -47,57 +47,16 @@
         android:layout_marginTop="70dp"
         android:orientation="vertical" >
 
-    <TextView
-        android:text="Axe X"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView5"
-        tools:text="Axe X" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textX" />
-
-    <TextView
-        android:text="Axe Y"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView7"
-        tools:text="Axe Y" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textY" />
-
-    <TextView
-        android:text="Axe Z"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView8"
-        tools:text="Axe Z" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textZ" />
-
-    <TextView
-        android:text="Direction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        tools:text="Direction" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textDirection" />
+        <TextView
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewCount"
+            android:textAlignment="center"
+            android:textSize="120dp"
+            android:inputType="number"
+            android:layout_marginTop="100dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3" />
 
     </LinearLayout>
 

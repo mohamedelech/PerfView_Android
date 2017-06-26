@@ -26,8 +26,8 @@
                 android:id="@+id/nav_Ra"
                 android:icon="@android:drawable/btn_star"
                 android:title="Réalité augmentée" />
-            <item android:title="Reconnaitre mouvement"
-                android:icon="@android:drawable/ic_menu_search"
+            <item android:title="Compteur"
+                android:icon="@android:drawable/ic_input_add"
                 android:id="@+id/nav_Rm" />
         </menu>
     </item>

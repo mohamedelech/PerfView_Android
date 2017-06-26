@@ -68,6 +68,7 @@
         app:backgroundTint="@color/colorPrimaryDark"
         app:layout_anchor="@+id/frameLayout"
         app:layout_anchorGravity="top|right"
-        android:layout_gravity="bottom|left" />
+        android:layout_gravity="bottom|left"
+        app:fabSize="mini" />
 
 </android.support.design.widget.CoordinatorLayout>
