@@ -41,11 +41,6 @@
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".ReconnaissanceMouvementActivity"
-            android:label="Reconnaissance mouvement"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity
             android:name=".CounterSensorActivity"
             android:label="Reconnaissance mouvement"
             android:theme="@style/AppTheme.NoActionBar">

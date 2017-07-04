@@ -30,7 +30,7 @@ public class CounterSensorActivity extends Activity implements SensorEventListen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reconnaissancemouvement);
+        setContentView(R.layout.activity_counter);
 
         mTxtViewCount= (TextView) findViewById(R.id.textViewCount);
         counter = 0;

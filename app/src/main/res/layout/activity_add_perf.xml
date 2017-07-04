@@ -166,6 +166,10 @@
         style="@style/Widget.AppCompat.Button"
         android:background="@android:color/holo_green_dark" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
         </LinearLayout>
     </ScrollView>
 </android.support.design.widget.CoordinatorLayout>
