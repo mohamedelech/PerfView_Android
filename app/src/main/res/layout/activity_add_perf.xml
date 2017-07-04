@@ -117,7 +117,11 @@
         android:layout_height="35dp"
         android:id="@+id/importPhoto" />
 
-    <ImageView
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:srcCompat="@android:drawable/ic_menu_report_image"
