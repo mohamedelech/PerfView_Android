@@ -18,7 +18,7 @@ Si ce n'est pas le cas pour une raison ou une autre installez les packages "Reco
 pofité également de mettre à jours votre IDE et outils SDK : https://developer.android.com/studio/intro/update.html
 
 Mais avant de passer à l'importation du projet,
-je vous invite à ajouter ou créer un émulateur depuis AVD Manager mis a dispositio par Android Studio.
+je vous invite à ajouter ou créer un émulateur depuis AVD Manager mis a disposition par Android Studio.
 
 Pour cela, lancez Android Studio, cliquez sur "Tools" puis sur "Android" et finalement "AVD Manager".
 Les différentes étapes sont mentionné sous ce lien : https://developer.android.com/studio/run/managing-avds.html
