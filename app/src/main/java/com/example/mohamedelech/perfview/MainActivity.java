@@ -109,9 +109,6 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
             return true;
 
-        } else if (id == R.id.nav_Ra) {
-            return true;
-
         } else if (id == R.id.nav_Rm) {
             Intent intent = new Intent(MainActivity.this, CounterSensorActivity.class);
             startActivity(intent);

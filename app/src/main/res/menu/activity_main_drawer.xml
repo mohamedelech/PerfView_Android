@@ -3,17 +3,17 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Camera" />
+            android:id="@+id/nav_SaisiePerf"
+            android:icon="?android:attr/actionModePasteDrawable"
+            android:title="Saisie Performance" />
         <item
             android:id="@+id/nav_agenda"
             android:icon="@android:drawable/ic_menu_today"
             android:title="Agenda" />
         <item
-            android:id="@+id/nav_SaisiePerf"
-            android:icon="?android:attr/actionModePasteDrawable"
-            android:title="Saisie Performance" />
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Camera" />
     </group>
 
     <item android:title="Fonctions avancées">
@@ -22,10 +22,7 @@
                 android:id="@+id/nav_compass"
                 android:icon="@android:drawable/ic_menu_compass"
                 android:title="Boussole" />
-            <item
-                android:id="@+id/nav_Ra"
-                android:icon="@android:drawable/btn_star"
-                android:title="Réalité augmentée" />
+
             <item android:title="Compteur"
                 android:icon="@android:drawable/ic_input_add"
                 android:id="@+id/nav_Rm" />
